@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     f = open('./imagenes.json', encoding='utf8') 
     listaImagenes = json.load(f)
-    return render_template("index.html", lista=listaImagenes['lista'])
+    return render_template("index.html", lista=[listaImagenes['lista']])
     
 @app.route('/about')
 def about():
@@ -24,8 +24,7 @@ def search():
             if busqueda.lower() in img['tags']:
                 imgBuscada.append(img)
         
-
-        return render_template('index.html', lista=imgBuscada)
+        return render_template('index.html', lista=[imgBuscada, listaImagenes['listaTags']])
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')

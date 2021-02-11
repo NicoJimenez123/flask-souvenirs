@@ -1,8 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+{% if not lista.0 %}
+            <h4>Lista de Tags Disponibles para buscar:</h4>
+            {% for tag in lista.1 %}
+                        <form class="d-flex" method=POST action="/search">
+                            <input class="btn btn-outline-success" type="submit" placeholder="Search" aria-label="Search" name="input" value={{tag['nombre']}}>
+                        </form>
+                        {% endfor %}
+{% endif %}
+{% if lista.0 %}
 <div class="row row-cols-1 row-cols-md-5 g-4 pl-4 pt-4">
-        {% for message in lista %} 
+        {% for message in lista.0 %} 
         <div class="col">
             <div class="card h-auto" style="width: 18rem;">
                 <img src="{{ message['url'] }}" class="card-img-top" alt="{{ message['alt']}}">
@@ -20,4 +30,5 @@
         </div>
         {% endfor %}
   </div>
+{% endif %}
 {% endblock %}

@@ -18,5 +18,17 @@
             "tags": ["juego", "regalo", "cumpleaños"]
         }
     ],
-    "listaTags":["juego", "regalo", "cumpleaños", "decoracion"]
+    "listaTags":[{
+            "nombre": "juego"
+        },
+        {
+            "nombre":"regalo"
+        },
+        {
+            "nombre":"cumpleaños"
+        },
+        {
+            "nombre":"decoracion"
+        }
+    ]
 }
