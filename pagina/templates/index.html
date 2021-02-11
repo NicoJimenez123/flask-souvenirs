@@ -1,12 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="card-group col-3 p-3">
-    <div class="card" style="width: 18rem;">
-        <img src="../static/almanaques.jpg" class="card-img-top" alt="Almanaques" height="200" width="200">
-        <div class="card-body">
-            <p class="card-text">Almanaques Personalizados con la foto que quieras!</p>
+<div class="row row-cols-1 row-cols-md-5 g-4 pl-4 pt-4">
+        {% for message in lista %} 
+        <div class="col">
+            <div class="card h-auto" style="width: 18rem;">
+                <img src="{{ message['url'] }}" class="card-img-top" alt="{{ message['alt']}}">
+                <div class="card-body">
+                    <p class="card-text">{{ message['descripcion'] }}</p>
+                    <div class="card-footer" style="display: inline-block;">Tags:
+                        {% for tag in message['tags'] %}
+                        <form class="d-flex" method=POST action="/search">
+                            <input class="btn btn-outline-success" type="submit" placeholder="Search" aria-label="Search" name="input" value={{tag}}>
+                        </form>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+        {% endfor %}
+  </div>
 {% endblock %}

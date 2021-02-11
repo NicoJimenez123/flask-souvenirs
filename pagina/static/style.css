@@ -2,5 +2,9 @@ nav{
     background: pink;
 }
 body{
-    background: aquamarine;
+    background: white;
+}
+img{
+    height: 200px;
+    width: 200px;
 }
