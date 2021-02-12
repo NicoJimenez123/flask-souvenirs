@@ -11,17 +11,20 @@
                         {% endfor %}
 {% endif %}
 {% if lista.0 %}
-<div class="row row-cols-1 row-cols-md-5 g-4 pl-4 pt-4">
+<div class="row row-cols-1 row-cols-md-5 g-4 pl-4 pt-4 m-1">
         {% for message in lista.0 %} 
         <div class="col">
             <div class="card h-auto" style="width: 18rem;">
                 <img src="{{ message['url'] }}" class="card-img-top" alt="{{ message['alt']}}">
                 <div class="card-body">
                     <p class="card-text">{{ message['descripcion'] }}</p>
+                    <p class="card-text"><b>{{ message['precio'] }}</b></p>
+                    <a href="https://wa.me/5491166377692" class="btn btn-outline-primary" style="color:#25D366">Contáctenos</a>
+                    <br>
                     <div class="card-footer" style="display: inline-block;">Tags:
                         {% for tag in message['tags'] %}
                         <form class="d-flex" method=POST action="/search">
-                            <input class="btn btn-outline-success" type="submit" placeholder="Search" aria-label="Search" name="input" value={{tag}}>
+                            <input class="btn btn-outline-secondary btn-sm" type="submit" placeholder="Search" aria-label="Search" name="input" value={{tag}}>
                         </form>
                         {% endfor %}
                     </div>

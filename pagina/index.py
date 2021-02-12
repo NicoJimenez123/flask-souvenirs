@@ -16,13 +16,14 @@ def about():
 @app.route('/search', methods=["POST"])
 def search():
     if request.method == 'POST':
-        busqueda = request.form['input']
+        busqueda = request.form['input'].split() #Esto va a recibir las palabras escritas en la barra de busqueda y las almacenará en una lista
         f = open('./imagenes.json', encoding='utf8')
         listaImagenes = json.load(f)
         imgBuscada = []
         for img in listaImagenes["lista"]:
-            if busqueda.lower() in img['tags']:
-                imgBuscada.append(img)
+            for palabra in busqueda:
+                if palabra.lower() in img['tags'] and img not in imgBuscada:
+                    imgBuscada.append(img)
         
         return render_template('index.html', lista=[imgBuscada, listaImagenes['listaTags']])
 

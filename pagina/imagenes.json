@@ -3,19 +3,22 @@
             "url": "../static/almanaques.jpg",
             "descripcion": "Almanaques Personalizados con la foto que quieras!",
             "alt": "Almanaques",
-            "tags": ["decoracion"]
+            "tags": ["decoracion"],
+            "precio":"6 x $50"
         },
         {
             "url": "../static/centro_mesa.jpg",
-            "descripcion": "Centros de mesa de la temática que quieras.\n5 centros $350 Base de 6 x6 Papel brillante u opaco deexcelente calidad.",
+            "descripcion": "Centros de mesa de la temática que quieras.\nBase de 6x6 Papel brillante u opaco deexcelente calidad.",
             "alt": "Centro de Mesa",
-            "tags": ["decoracion", "cumpleaños"]
+            "tags": ["decoracion", "cumpleaños"],
+            "precio":"5 x $350"
         },
         {
             "url": "../static/memoria.png",
-            "descripcion": "Juego de la memoria recortable personalizado y tamaño A4, listo para entregar como souvenirs. $60 por unidad. $50 a partir de 10 unidades.",
+            "descripcion": "Juego de la memoria recortable personalizado y tamaño A4, listo para entregar como souvenirs.",
             "alt": "Memoria",
-            "tags": ["juego", "regalo", "cumpleaños"]
+            "tags": ["juego", "regalo", "cumpleaños"],
+            "precio":"$60 c/u.\n$50 a partir de 10 unidades."
         }
     ],
     "listaTags":[{
